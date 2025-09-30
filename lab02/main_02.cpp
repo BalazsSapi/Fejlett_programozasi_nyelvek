@@ -23,12 +23,35 @@ int main(int argc, char** argv) {
 
 	//testIsSquare("data/in.txt");
 
-	Point* points = random_points(5);
-	for(int i=0; i<5; i++) {
-		points[i].print();
-	}
+	Point* points = random_points(1000000);
+	//printArray(points, 15);
+	//cout << endl;
+	//closestPoints(points,100).first.print();
+	//closestPoints(points,100).second.print();
+	//farthestPoints(points, 100).first.print();
+	//farthestPoints(points, 100).second.print();
 
-	delete[] points;
+	//sortPointsByAbscissa(points, 5);
+	//printArray(points, 5);
+
+	//Point* returns=farthestPointsFromOrigin(points, 15);
+	//printArray(returns, 10);
+
+	//deletePoints(returns);
+
+	cout << endl;
+	cout << endl;
+
+	/*pair<Point,Point> res=closestPointsEfficient(points,10000);
+	res.first.print();
+	res.second.print();*/
+
+	pair<Point,Point> res=farthestPointsEfficient(points,1000000);
+	res.first.print();
+	res.second.print();
+
+	deletePoints(points);
+
 	delete pp1;
 	delete pp2;
 	return 0;

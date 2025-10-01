@@ -13,10 +13,14 @@ class Point{
             int getX() const;
             int getY() const;
             void print() const;
-            /*bool operator<(const Point& other) const {
+            bool operator<(const Point& other) const {
                 if (x == other.x) return y < other.y;
                 return x < other.x;
-            }*/
+            }
+            bool operator==(const Point& other) const {
+
+                return x == other.x && y==other.y;
+            }
     };
 
     double distance(const Point& a, const Point& b);

@@ -42,13 +42,13 @@ int main(int argc, char** argv) {
 	cout << endl;
 	cout << endl;
 
-	/*pair<Point,Point> res=closestPointsEfficient(points,10000);
-	res.first.print();
-	res.second.print();*/
-
-	pair<Point,Point> res=farthestPointsEfficient(points,1000000);
+	pair<Point,Point> res=closestPointsEfficient(points,1000000);
 	res.first.print();
 	res.second.print();
+
+	// pair<Point,Point> res=farthestPointsEfficient(points,1000000);
+	// res.first.print();
+	// res.second.print();
 
 	deletePoints(points);
 

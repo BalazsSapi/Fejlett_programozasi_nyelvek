@@ -104,21 +104,24 @@ void testIsSquare(const char * filename)
     in.close();
 }
 
-Point* random_points(const int n)
-{
+Point* random_points(const int n) {
     srand(time(nullptr));
     Point *points=new Point[n];
-    //set<Point> set;
-    
-    for(int i=0; i<n; i++){
-        points[i]=Point(rand()%2001, rand()%2001);
-        //set.insert(Point(rand(),rand()));
+    set<Point> set;
+
+    while (set.size()<n) {
+        set.insert(Point(rand()%2001,rand()%2001));
     }
-    /*int i=0;
+
+    /*for(int i=0; i<n; i++){
+        points[i]=Point(rand()%2001, rand()%2001);
+    }*/
+    int i=0;
     for (auto& p : set) {
         points[i] = p;
+        i++;
     }
-    */
+
     return points;
 }
 

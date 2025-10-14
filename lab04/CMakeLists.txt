@@ -1,2 +1,10 @@
+cmake_minimum_required(VERSION 3.30)
+
 project(lab4)
-add_executable(lab4 main_04.cpp)
+
+set(CMAKE_CXX_STANDARD 26)
+
+add_executable(lab4 main_04.cpp
+        Polynomial.cpp
+        Polynomial.h
+)

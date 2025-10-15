@@ -18,6 +18,14 @@ Matrix::Matrix(const Matrix &other): mRows(other.mRows), mCols(other.mCols), mEl
 Matrix::Matrix(Matrix &&other) noexcept: mRows(other.mRows), mCols(other.mCols), mElements(move(other.mElements)){
 }
 
+void Matrix::fillMatrix(double value) {
+    for (int i=0; i<x.mRows; i++) {
+        for (int j=0; j<y.mCols; j++) {
+            mElements[i][j]=value;
+        }
+    }
+}
+
 void Matrix::randomMatrix(int a, int b) {
     srand(time(0));
     for (int i=0; i<mRows*mCols; ++i) {
@@ -80,9 +88,12 @@ Matrix operator*(const Matrix &x, const Matrix &y) {
     Matrix m(x.mRows,y.mCols);
     for (int i=0; i<x.mRows; i++) {
         for (int j=0; j<y.mCols; j++) {
-
+            for (int k=0; k<x.mCols; k++) {
+                m[i][j]+=x[i][k]*y[k][j];
+            }
         }
     }
+    return m;
 }
 
 istream & operator>>(std::istream &is, Matrix &mat) {

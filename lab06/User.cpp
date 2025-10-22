@@ -3,3 +3,7 @@
 //
 
 #include "User.h"
+
+using namespace std;
+
+int User::counter=0;

@@ -25,11 +25,15 @@ private:
 public:
     Quiz(const string &name)
         : name(name) {
-        id=counter++;
+        id=++counter;
         isReady=false;
     }
     void addItem(QuizItem item){ items.push_back(item); }
     void setIsReady(){ isReady=true; }
+    vector<QuizItem> & getItems () { return items; }
+    int getId() { return id; }
+    void readQuizFromFile(string fileName);
+    string getName() { return name; }
 };
 
 

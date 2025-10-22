@@ -22,10 +22,10 @@ private:
 public:
     User(const string &name)
         : name(name) {
-        id=counter++;
+        id=++counter;
     }
     void add_result(int quizId, double result) {
-        //itt kell folytatni
+        results[quizId].push_back(result);
     }
 };
 

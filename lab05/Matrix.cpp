@@ -19,9 +19,9 @@ Matrix::Matrix(Matrix &&other) noexcept: mRows(other.mRows), mCols(other.mCols),
 }
 
 void Matrix::fillMatrix(double value) {
-    for (int i=0; i<x.mRows; i++) {
-        for (int j=0; j<y.mCols; j++) {
-            mElements[i][j]=value;
+    for (int i=0; i<mRows; i++) {
+        for (int j=0; j<mCols; j++) {
+            mElements[i*mCols+j]=value;
         }
     }
 }

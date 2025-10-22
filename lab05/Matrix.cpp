@@ -18,6 +18,29 @@ Matrix::Matrix(const Matrix &other): mRows(other.mRows), mCols(other.mCols), mEl
 Matrix::Matrix(Matrix &&other) noexcept: mRows(other.mRows), mCols(other.mCols), mElements(move(other.mElements)){
 }
 
+Matrix & Matrix::operator=(const Matrix &other) {
+    if (mCols!=other.mCols || mRows!=other.mRows) {
+        throw out_of_range("The two matrices are not the same size");
+    }
+    for (int i=0; i<mRows; i++) {
+        for (int j=0; j<mCols; j++) {
+            mElements[i*mCols+j]=other.mElements[i*mCols+j];
+        }
+    }
+    return *this;
+}
+
+Matrix & Matrix::operator=(Matrix &&other) noexcept {
+    // if (mCols!=other.mCols || mRows!=other.mRows) {
+    //     throw out_of_range("The two matrices are not the same size");
+    // }
+    mRows=other.mRows;
+    mCols=other.mCols;
+    mElements=move(other.mElements);
+    other.mRows=0;
+    other.mCols=0;
+}
+
 void Matrix::fillMatrix(double value) {
     for (int i=0; i<mRows; i++) {
         for (int j=0; j<mCols; j++) {

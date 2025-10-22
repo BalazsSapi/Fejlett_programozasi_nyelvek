@@ -2,6 +2,6 @@
 // Created by domokos.balazs on 22.10.2025.
 //
 
-#include "Quiz.h"
+#include "QuizItem.h"
 
-int Quiz:: counter=0;
+int QuizItem:: counter=0;

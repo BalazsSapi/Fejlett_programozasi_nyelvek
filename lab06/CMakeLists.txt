@@ -11,6 +11,8 @@ add_executable(lab6 main_06.cpp
             QuizGame.h
             User.cpp
             User.h
+        QuizItem.cpp
+        QuizItem.h
 )
 
 

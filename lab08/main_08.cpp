@@ -1,6 +1,10 @@
 #include <iostream>
 
+#include "Teszt.h"
+
+using namespace std;
+
 int main() {
-    std::cout << "Hello, Lab_08" << std::endl;
-    return 0;
+    Teszt t=Teszt();
+    cout<<t.getA();
 }

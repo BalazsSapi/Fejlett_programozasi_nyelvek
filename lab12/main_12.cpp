@@ -1,6 +1,12 @@
 #include <iostream>
 
+#include "SimpleTextGenerator.h"
+
+using namespace std;
+
 int main() {
-    std::cout << "Hello, Lab_12" << std::endl;
+    SimpleTextGenerator simpleText;
+    simpleText.trainFromFile("data/in.txt");
+    cout<<simpleText.generate("For sleep", 6);
     return 0;
 }
